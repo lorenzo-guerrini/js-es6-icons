@@ -126,7 +126,7 @@ const selector = document.getElementById("icons-selector");
 // ---- CODICE DA ESEGUIRE ----
 
 //Cambia il color di ciascuna icona con un colore casuale
-genRandomColors()
+genRandomColors();
 
 //Stampa tutte le box al caricamento pagina
 printAllBoxes();
@@ -136,7 +136,7 @@ selector.addEventListener("change", function () {
 	container.innerHTML = "";
 
 	if (selector.value == "all") {
-		printAllBoxes()
+		printAllBoxes();
 	} else {
 		printFilteredBoxes();
 	}
@@ -189,7 +189,7 @@ function randomColor() {
 	let tempColor = "#";
 
 	for (let i = 0; i < 6; i++) {
-		tempColor += chars[randomInt(0, 15)]
+		tempColor += chars[randomInt(0, 15)];
 	}
 
 	return tempColor;
@@ -197,5 +197,5 @@ function randomColor() {
 
 //Genera un numero intero casuale dato un intervallo
 function randomInt(min, max) {
-	return Math.floor(Math.random() * (max - min + 1) + min)
+	return Math.floor(Math.random() * (max - min + 1) + min);
 }
