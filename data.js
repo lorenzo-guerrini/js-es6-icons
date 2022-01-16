@@ -116,10 +116,14 @@ const icons = [
 	}
 ];
 
-//Variabile container
+//Variabile container main
+const selectorContainer = document.getElementById("selector-container");
+
+//Variabile container icone
 const container = document.getElementById("icons-container");
 
-//Variabile selector
+//Genera e prende variabile selector
+selectorContainer.append(selectorGen());
 const selector = document.getElementById("icons-selector");
 
 
@@ -144,6 +148,38 @@ selector.addEventListener("change", function () {
 
 // ---- FUNZIONI ----
 
+//Genera selector
+function selectorGen() {
+	let options = ["all"];
+
+	//Prende i vari tipi dall'array icons e li inserisce in options
+	icons.forEach((icon) => {
+		const tempType = icon.type;
+		if (!options.includes(tempType)) {
+			options.push(tempType);
+		}
+	});
+
+	//Genera il selector aggiungendo le varie options una per una
+	let tempSelector = document.createElement("select");
+	tempSelector.id = "icons-selector";
+
+	options.forEach((option) => {
+		let tempOption = document.createElement("option");
+		tempOption.value = option;
+		tempOption.innerHTML = capitalizeFirstLetter(option);
+
+		tempSelector.append(tempOption);
+	});
+
+	return tempSelector;
+}
+
+//Rende maiuscola la prima lettera di una stringa
+function capitalizeFirstLetter(string) {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 //Genera codice di una singola box
 function genBoxCode(icon) {
 	return `
@@ -159,7 +195,7 @@ function printAllBoxes() {
 	icons.forEach((icon) => {
 		container.innerHTML += genBoxCode(icon);
 	});
-};
+}
 
 //Stampa le box in base al filtro
 function printFilteredBoxes() {
@@ -180,7 +216,7 @@ function filterBoxes() {
 function genRandomColors() {
 	icons.forEach((icon) => {
 		icon.color = randomColor();
-	})
+	});
 }
 
 //Genera un colore hex casuale

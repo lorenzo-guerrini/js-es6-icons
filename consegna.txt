@@ -11,7 +11,7 @@ BONUS
 
 1- modificare la struttura dati fornita e valorizzare la proprietà “color” in modo dinamico: generare in modo casuale un codice colore, sapendo che la notazione esadecimale è formata dal simbolo “#” seguito da 6 caratteri alfanumerici compresi tra 0 e 9 e A e F. - FATTO
 
-2- popolare le options della select della milestone 3 dinamicamente.
+2- popolare le options della select della milestone 3 dinamicamente. - FATTO
 
 Consigli del giorno
 Come sempre, iniziamo prima di tutto dall’analisi e comprensione della consegna. Scomponiamo il problema in micro-passaggi logici che solamente in un secondo momento trasformeremo in codice.
