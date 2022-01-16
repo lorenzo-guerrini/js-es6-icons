@@ -1,4 +1,4 @@
-[
+const icons = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +112,6 @@
 		color: 'blue'
 	}
 ];
+
+//Variabile container
+const container = document.getElementById("icons-container");

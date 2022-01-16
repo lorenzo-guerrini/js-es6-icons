@@ -19,3 +19,7 @@ Le icone presenti nella struttura dati fanno riferimento alla nota libreria Font
 Dopodiché, basandoci sul codice di riferimento nel sito di Font Awesome, analizziamo come è formato il tag <i> di un’icona qualsiasi, in particolare focalizziamoci sulle classi.
 Come possiamo usare i dati presenti nella nostra struttura dati per creare l’elemento html nel modo corretto e visualizzare l’icona in pagina?
 Inizialmente può essere sufficiente stampare dei semplici div, senza alcuno stile, con all’interno l’icona e uno span con il nome. Solamente quando la parte logica è completa, ci dedichiamo al css.
+
+Consiglio: chiamate le variabili con nomi "parlanti".
+Se dentro ad una variabile ci finisce un'icona, chiamatela icon.
+Se ci finisce un'array di icone, icons e via dicendo.
