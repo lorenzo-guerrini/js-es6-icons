@@ -18,12 +18,16 @@ body {
 
 #icons-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Box */
 .box {
-    height: 50px;
+    height: 60px;
     width: 100px;
+
+    text-align: center;
 
     display: flex;
     flex-direction: column;

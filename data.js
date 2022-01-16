@@ -112,6 +112,32 @@ const icons = [
 		color: 'blue'
 	}
 ];
+// --- VARIABILI ----
 
 //Variabile container
 const container = document.getElementById("icons-container");
+
+
+// ---- CODICE DA ESEGUIRE ----
+
+genBoxesAll();
+
+
+// ---- FUNZIONI ----
+
+//Genera codice di una singola box
+function genBoxCode(icon) {
+	return `
+<div class="box">
+    <i class="${icon.family} ${icon.prefix}${icon.name} ${icon.color}"></i>
+    <div class="name">${icon.name}</div>
+</div>
+`;
+}
+
+//Genera tutte le box
+function genBoxesAll() {
+	icons.forEach((icon) => {
+		container.innerHTML += genBoxCode(icon);
+	});
+};
