@@ -141,3 +141,4 @@ function genBoxesAll() {
 		container.innerHTML += genBoxCode(icon);
 	});
 };
+
