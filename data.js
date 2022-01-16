@@ -117,10 +117,23 @@ const icons = [
 //Variabile container
 const container = document.getElementById("icons-container");
 
+//Variabile selector
+const selector = document.getElementById("icons-selector");
+
 
 // ---- CODICE DA ESEGUIRE ----
 
-genBoxesAll();
+printAllBoxes();
+
+selector.addEventListener("change", function () {
+	container.innerHTML = "";
+
+	if (selector.value == "all") {
+		printAllBoxes()
+	} else {
+		printFilteredBoxes();
+	}
+});
 
 
 // ---- FUNZIONI ----
@@ -136,9 +149,23 @@ function genBoxCode(icon) {
 }
 
 //Genera tutte le box
-function genBoxesAll() {
+function printAllBoxes() {
 	icons.forEach((icon) => {
 		container.innerHTML += genBoxCode(icon);
 	});
 };
 
+//Stampa le box in base al filtro
+function printFilteredBoxes() {
+	let boxes = filterBoxes();
+	boxes.forEach((box) => {
+		container.innerHTML += genBoxCode(box);
+	});
+}
+
+//Filtra le box in base al selector
+function filterBoxes() {
+	return icons.filter((box) => {
+		return box.type == selector.value;
+	});
+}
