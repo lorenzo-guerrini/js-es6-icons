@@ -1,3 +1,6 @@
+// --- VARIABILI ----
+
+//Variabile con array di icone
 const icons = [
 	{
 		name: 'cat',
@@ -112,7 +115,6 @@ const icons = [
 		color: 'blue'
 	}
 ];
-// --- VARIABILI ----
 
 //Variabile container
 const container = document.getElementById("icons-container");
@@ -123,8 +125,13 @@ const selector = document.getElementById("icons-selector");
 
 // ---- CODICE DA ESEGUIRE ----
 
+//Cambia il color di ciascuna icona con un colore casuale
+genRandomColors()
+
+//Stampa tutte le box al caricamento pagina
 printAllBoxes();
 
+//EventListener del selector
 selector.addEventListener("change", function () {
 	container.innerHTML = "";
 
@@ -135,20 +142,19 @@ selector.addEventListener("change", function () {
 	}
 });
 
-
 // ---- FUNZIONI ----
 
 //Genera codice di una singola box
 function genBoxCode(icon) {
 	return `
 <div class="box">
-    <i class="${icon.family} ${icon.prefix}${icon.name} ${icon.color}"></i>
+    <i class="${icon.family} ${icon.prefix}${icon.name}" style="color: ${icon.color};"></i>
     <div class="name">${icon.name}</div>
 </div>
 `;
 }
 
-//Genera tutte le box
+//Stampa tutte le box
 function printAllBoxes() {
 	icons.forEach((icon) => {
 		container.innerHTML += genBoxCode(icon);
@@ -168,4 +174,28 @@ function filterBoxes() {
 	return icons.filter((box) => {
 		return box.type == selector.value;
 	});
+}
+
+//Da a ciascuna icon nell'array icons un colore hex casuale
+function genRandomColors() {
+	icons.forEach((icon) => {
+		icon.color = randomColor();
+	})
+}
+
+//Genera un colore hex casuale
+function randomColor() {
+	const chars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
+	let tempColor = "#";
+
+	for (let i = 0; i < 6; i++) {
+		tempColor += chars[randomInt(0, 15)]
+	}
+
+	return tempColor;
+}
+
+//Genera un numero intero casuale dato un intervallo
+function randomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1) + min)
 }

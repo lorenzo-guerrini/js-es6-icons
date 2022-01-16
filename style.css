@@ -4,17 +4,16 @@
     box-sizing: border-box;
 }
 
-/* Colori */
-.orange {
-    color: orange;
+/* Header */
+header .container {
+    height: 50px;
+    display: flex;
+    align-items: center;
 }
 
-.green {
-    color: green;
-}
-
-.blue {
-    color: blue;
+header .container h1 {
+    color: #29B1DD;
+    margin-left: 10px;
 }
 
 /* Body e container */
