@@ -185,7 +185,7 @@ function genRandomColors() {
 
 //Genera un colore hex casuale
 function randomColor() {
-	const chars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
+	const chars = "0123456789ABCDEF";
 	let tempColor = "#";
 
 	for (let i = 0; i < 6; i++) {
